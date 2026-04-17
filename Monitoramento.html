@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento Industrial</title>
+
+   
+    <link rel="stylesheet" href="/CSS/monitoramento.css">
+</head>
+
+<body>
+
+    <h1>Monitoramento em Tempo Real</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Temperatura (°C)</h2>
+            <p id="temperatura" class="valor-grande">-- °C</p>
+        </div>
+        
+        <div class="card">
+            <h2>Umidade (%)</h2>
+            <p id="umidade" class="valor-grande">-- %</p>
+        </div>
+       
+        <div class="card">
+            <h2>Histórico de Leituras</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Temperatura (°C)</th>
+                        <th>Umidade (%)</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabela">
+                 
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+ 
+    <script src="/JS/monitoramento.js"></script>
+
+</body>
+</html>
