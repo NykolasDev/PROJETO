@@ -1,7 +1,7 @@
 let dados = [];
 
 function buscarDados() {
-    fetch("http://localhost:1880/ui")
+    fetch("http://localhost:1880/leituras")
         .then(res => res.json())
         .then(data => {
 
