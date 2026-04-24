@@ -1,142 +1,132 @@
-# 📊 Sistema de Monitoramento de Dados Industriais
+# 🌡️ Sistema de Monitoramento de Temperatura e Umidade
 
-## 📌 Descrição do Projeto
+## 📌 Descrição
 
-Este projeto tem como objetivo desenvolver um sistema de monitoramento de dados em tempo real, utilizando sensores conectados a um microcontrolador, com envio, processamento e visualização das informações.
+Este projeto consiste em um sistema de monitoramento em tempo real de temperatura e umidade, utilizando Arduino, Node-RED e uma interface web desenvolvida com HTML, CSS e JavaScript.
 
-O sistema permite acompanhar variáveis como **temperatura e umidade**, auxiliando na prevenção de falhas e na tomada de decisões.
-
----
-
-## 🎯 Objetivo
-
-* Coletar dados de sensores
-* Enviar os dados para o backend
-* Armazenar em banco de dados
-* Exibir os dados em uma interface web
-
----
-
-## 🏗️ Estrutura do Projeto
-
-```
-PROJETO/
-│
-├── CSS/
-│   ├── cadastro.css
-│   ├── login.css
-│   └── monitoramento.css
-│
-├── HTML/
-│   ├── cadastro.html
-│   ├── login.html
-│   └── Monitoramento.html
-│
-├── JS/
-│   ├── cadastro.js
-│   ├── login.js
-│   └── monitoramento.js
-```
+O sistema coleta dados de sensores, processa essas informações e exibe os resultados em uma dashboard interativa, além de disponibilizar um histórico das leituras.
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
 
-* HTML
-* CSS
-* JavaScript
-* Node-RED
-* Banco de Dados (MySQL)
-* Arduino (para coleta de dados)
+* 🟢 Arduino
+* 🟠 Node-RED
+* 🌐 HTML5
+* 🎨 CSS3
+* ⚡ JavaScript
+* 💾 LocalStorage (simulação de banco de dados)
 
 ---
 
-## 🔌 Funcionamento do Sistema
+## 🚀 Funcionalidades
 
-1. O sensor coleta dados (temperatura e/ou umidade)
-2. O Arduino envia os dados para o Node-RED
-3. O Node-RED:
-
-   * Processa os dados
-   * Armazena no banco de dados
-   * Disponibiliza via endpoint
-4. O frontend consome os dados usando `fetch()`
-5. Os dados são exibidos na tela em tempo real
+* 📡 Monitoramento em tempo real
+* 🔄 Atualização automática dos dados (a cada 2 segundos)
+* 📊 Exibição de temperatura e umidade
+* 📋 Histórico de leituras
+* 🔐 Sistema de login e cadastro
+* 👨‍💻 Acesso administrativo
 
 ---
 
-## 🌐 Endpoint
+## 🖥️ Como Executar o Projeto
 
-O sistema utiliza um endpoint para comunicação com o backend:
+### 1. Configurar o Node-RED
+
+* Inicie o Node-RED
+* Configure o endpoint da API:
 
 ```
-http://localhost:1880/ui
+http://SEU_IP:1880/ler
 ```
 
-(ou IP da máquina, caso esteja em rede)
+### 2. Configurar o Arduino
+
+* Conecte o sensor ao Arduino
+* Envie os dados para o Node-RED
+
+### 3. Executar o Frontend
+
+* Abra o arquivo `login.html` no navegador
 
 ---
 
-## 💻 Funcionalidades
+## 🔑 Acesso ao Sistema
 
-* Tela de login
-* Cadastro de usuário
-* Monitoramento em tempo real
-* Exibição de:
+### 👤 Usuário comum
 
-  * Temperatura
-  * Umidade
-* Histórico de leituras
+* Crie uma conta na tela de cadastro
 
----
+### 👑 Administrador
 
-## 🔐 Autenticação
-
-O sistema possui autenticação simples utilizando **localStorage**, permitindo:
-
-* Cadastro de usuários
-* Login
-* Controle de acesso básico
+* **Usuário:** admin
+* **Senha:** VON
 
 ---
 
-## 📊 Interface
+## 🌐 Estrutura do Projeto
 
-A interface apresenta:
-
-* Valor atual de temperatura
-* Valor atual de umidade
-* Tabela com histórico de dados
-
----
-
-## 🚀 Como Executar
-
-1. Iniciar o Node-RED
-2. Configurar o fluxo com endpoint `/ui`
-3. Rodar o backend
-4. Abrir o arquivo `login.html`
-5. Criar um usuário
-6. Acessar o sistema
-
----
-
-## 📚 Observações
-
-* O sistema pode ser integrado com sensores reais
-* A autenticação pode ser evoluída para backend
-* Pode ser expandido com gráficos e alertas
+```
+📁 projeto
+ ├── 📁 HTML
+ │   ├── login.html
+ │   ├── cadastro.html
+ │   ├── Monitoramento.html
+ │   └── historico.html
+ │
+ ├── 📁 CSS
+ │   ├── login.css
+ │   ├── cadastro.css
+ │   └── monitoramento.css
+ │
+ ├── 📁 JS
+ │   ├── login.js
+ │   ├── cadastro.js
+ │   ├── monitoramento.js
+ │   └── historico.js
+```
 
 ---
 
-## 👥 Integrantes
+## 🔄 Funcionamento do Sistema
 
-* Nykolas Guimarães
-* Otávio Pinheiro
-* Victor Hugo
+1. O sensor coleta os dados de temperatura e umidade
+2. O Arduino envia esses dados
+3. O Node-RED processa e cria uma API
+4. O frontend consome essa API com `fetch`
+5. Os dados são exibidos na dashboard em tempo real
 
 ---
 
-## 📌 Conclusão
+## ⚠️ Observações
 
-O projeto demonstra a integração entre hardware, backend e frontend, permitindo o monitoramento eficiente de dados industriais em tempo real.
+* O sistema utiliza **localStorage**, sendo indicado apenas para testes
+* Para uso real, recomenda-se um banco de dados e autenticação no backend
+
+---
+
+## 🧪 Testes
+
+O sistema foi testado nos seguintes cenários:
+
+* ✔ Login válido e inválido
+* ✔ Consumo da API
+* ✔ Atualização em tempo real
+* ✔ Exibição da dashboard
+* ✔ Funcionamento do histórico
+* ✔ Comportamento com API desligada
+
+---
+
+## 📚 Referências
+
+* Arduino Documentation
+* Node-RED Documentation
+* MDN Web Docs (Fetch API e LocalStorage)
+
+---
+
+## 👨‍💻 Autor
+
+Projeto desenvolvido para fins acadêmicos.
